@@ -1,0 +1,55 @@
+#wrapper h1{
+    font-family: helvetica, verdana, sans-serif;
+    font-size: 12em;
+    color: #F0C6D6;
+    text-align: center;
+    margin-bottom: 0em;
+    margin-top: 0em;
+}
+#wrapper h2 {
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    font-size:5em;
+    color: #F0C6D6;
+    margin-top: 0em;
+    margin-bottom: 0em;
+
+}
+body {
+    background-image: url(../img/blossoms.jpg);
+    background-repeat: repeat;
+    background-size: contain;
+}
+#wrapper p {
+    font-family: 'Dancing Script', cursive;
+    text-align: center;
+    font-size: 1.8em;
+    margin-bottom: 0em;
+    color: #BD93BF;
+    margin-top: 0px;
+}
+#wrapper2 {
+    background-color: rgba(252, 227, 255, .7);
+    width: 65em;
+    margin-left: 6em;
+    font-family: helvetica, verdana, sans-serif;
+    text-align: center;
+    padding-top: 2em;
+    font-variant: small-caps;
+    margin-top: 5em;
+}
+ul, ol {
+    list-style-position: inside;
+}
+.websites a:link {
+    color: grey;
+}
+.websites a:hover {
+    color: #F0C6D6;
+}
+.website a:active {
+    color: grey;
+}
+.website a:visited {
+    color: grey;
+}

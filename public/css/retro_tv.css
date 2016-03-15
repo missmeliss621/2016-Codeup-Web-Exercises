@@ -1,0 +1,51 @@
+body {
+    background-image: url(../img/retro-tv.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+#tv_listings {
+    width: 300px;
+    height: 100px;
+    margin-top: 270px;
+    margin-left: 165px;   
+}
+#tv_listings>p {
+    font-family: Arial Rounded MT Bold,Helvetica Rounded,Arial,sans-serif; 
+    color: white;
+    font-size: 5em;
+}
+#show_times {
+    width: 40%; 
+    margin-left: 135px;
+}
+table {
+    color: white;
+    width: 100%;
+    font-size: .7em;
+    font-family: Verdana,Geneva,sans-serif; 
+}
+td {
+    height:25px;
+    text-align: center;
+}
+.comedy {
+    background-color: #67B54D;
+}
+.drama {
+    background-color: #E8B334;
+}
+.news {
+    background-color: #FF0000;
+}
+.sports {
+    background-color: #C099E8;
+}
+.documentary {
+    background-color: #26C1D7;
+}
+.reality {
+    background-color: #7C12E8;
+}
+.channel {
+    background-color: #1F1ED7;
+}
