@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <title></title>
@@ -7,12 +7,82 @@
 <script>
     Math.floor((Math.random()*50)+1)
 
-    for (var i = 1; i <= 50; i ++){
-        if (i % 2 ==0){
-            continue;
-        }
-        console.log (i + ' is an odd number');
-    }
+    //for (var i = 1; i <= 50; i ++){
+      //  if (i % 2 ==0){
+         //   continue;
+       // }
+       // console.log (i + ' is an odd number');
+//    }
+
+
+//VAR NAMES = [
+  //  "Ben",
+   // "Isaac",
+   // "Melissa",
+   // "will",
+   // "Natalie",
+   // "pancho"
+//];
+
+//for (var i = 0; i < names.length; i==) {
+//    if (names[i]. indexOf ("i") == -1) {
+//        continue;
+//    }
+ //   console.log(names[i]);
+//}
+/*
+function sayHello () {
+    console.log ("hello Joshua");
+
+    sayMyName ();
+}
+
+sayHello ();
+
+function sayMyName () {
+    console.log ("Heisenberg");
+}*/
+
+/*function sayHello (cohortName) {
+    console.log ("hello " + cohortName + "!");
+    console.log ("How are you guys doing today?");
+}
+
+sayHello ();
+
+function sayMyName () {
+    console.log ("Heisenberg");
+}
+sayHello ("Joshua");
+
+var anotherName = "Kari";
+sayHello (anotherName);*/
+
+function sayHello (cohortName, morningWeather) {
+    console.log ("hello " + cohortName + "!");
+    console.log ("How are you guys doing today?");
+    console.log ("It was kind of " + morningWeather +" ");
+}
+
+sayHello ();
+
+function sayMyName () {
+    console.log ("Heisenberg");
+}
+
+function adding (num1, num2) {
+    var result = num1 + num2;
+        return result;
+        return num1 + num2;
+}
+
+var result = sayHello ("Joshua", "cloudy");
+console.log(result);
+
+sayHello ("Joshua", "sunny");
+
+var anotherName = "Kari";
+sayHello (anotherName, "cloudy");
 </script>
 </body>
 </html>
