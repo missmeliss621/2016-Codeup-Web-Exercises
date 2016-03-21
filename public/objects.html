@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
+    <script type="text/javascript">
+        (function (){
+        var car = new Object();
+        var car = {};
+        console.log(typeof car);
+
+        var car = {};
+        car.make = "Toyota";
+        car.model = "Camry";
+
+        console.log('The car make is: ' + car['make']);
+
+        console.log('The car model is: ' + car.model);
+
+        var what = "color";
+
+        car.color = "Grey";
+        car.year = "2001";
+        car.type = "Sedan";
+
+        console.log(car);
+        console.log(car.year);
+        console.log(car.type);
+        //console.log(car[what]);
+
+        car.honk = function () {
+        alert("Honk! Honk");
+        };
+        
+        car.makemodel();
+
+        var motorcyle = {};
+        motorcyle.logMakeModel = function() {
+            console.log ('car make/model is:' + this.make + ' ' + this.model );
+        }
+  })();
+
+
+    </script>
+
+</body>
+</html>
