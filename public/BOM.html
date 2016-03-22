@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<script type="text/javascript">
+
+    "use strict";
+    (function() {
+        // get the "username" input
+        var usernameInput = document.forms.login.username;
+
+        // log the value of the "username" input
+        console.log(usernameInput.value);
+    })();
+</script>
+<form name="login">
+    <div>
+        <label for="username">Username</label>
+        <input id="username" name="username" type="text">
+    </div>
+    <div>
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password">
+    </div>
+    <div>
+        <input type="submit">
+    </div>
+</form>
+
+</body>
+</html>
+
+// var codeupClassroom = {
+
+//     classroom: 'big',
+//     temp:      'too cold',
+
+//     changeClassroom: function(){
+//         this.classroom = 'small';
+//         this.temp      = 'too hot';
+//     },
+
+//     consoleLogThis: function(){
+//         console.log(this);
+//     },
+
+//     describeClassroom: function(beVerbose){
+//         var msg = '';
+
+//         if (beVerbose) {
+//             msg += 'The classroom is the ' + this.classroom + ' classroom.\n';
+//             msg += 'The temperature in here is ' + this.temp + '.';
+//         } else {
+//             msg += 'classroom: ' + this.classroom + '\n';
+//             msg += 'temp: ' + this.temp;
+//         }
+
+//         console.log(msg);
+//     }
+// }
+// codeupClassroom.consoleLogThis();
+// codeupClassroom.describeClassroom(true);
+// codeupClassroom.changeClassroom();
+// codeupClassroom.describeClassroom(false);
