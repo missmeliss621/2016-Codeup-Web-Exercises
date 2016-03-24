@@ -1,0 +1,36 @@
+#calculator {
+    width: 100%;
+    border: 1px, solid, grey;
+}
+button {
+    width: 100px;
+    height: 5em;
+    background: linear-gradient(135deg, #e4e4e4, #f6f6f6);
+    border-radius:.4em;
+}
+ul li { 
+    float:left; 
+    width: 100px; 
+    list-style: none;
+}
+.clear {
+    clear: both;
+}
+#results-row {
+    text-align: center;
+}
+#number-row1 {
+    text-align: center;
+}
+#number-row2 {
+    text-align: center;
+}
+#number-row3 {
+    text-align: center;
+}
+#number-row4 {
+    text-align: center;
+}
+.operators {
+    background-color: #FFCC33;
+}
