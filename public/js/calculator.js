@@ -1,15 +1,3 @@
-// button1 = function () {
-//           var inputBox1 = document.getElementById("input-box1");
-  
-//     if (inputBox1.innerHTML == "result box 1"){
-//         inputBox1.innerHTML = "1";
-//     }else {
-//         var inputBox1 = document.getElementById("input-box1");
-//         inputBox1.innerHTML = "input-box3";
-//     }
-// ;
-
-
 
 // --------------------------GLOBAL------------------------------
 var wasButtonOperatorClicked = false;
@@ -56,10 +44,6 @@ function operatorsClicked (){
 
 var equalsButton = document.getElementById("buttonEqual");
 equalsButton.addEventListener("click", equalsClicked);
-
-
-
-5 + 5;
 
 function equalsClicked (){
     var firstNumber = parseInt(inputBoxLeft.innerHTML);
