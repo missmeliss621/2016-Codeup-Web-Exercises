@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script type="text/javascript"></script>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script>
+        "use strict";
+
+            // var state = 0, konami = [38,38,40,40,37,39,37,39,66,65];
+            // window.addEventListener("keydown", function(event) {
+            //     if ( event.keyCode == konami[state] ){ 
+            //         state++; 
+            //     } else { 
+            //         state = 0; 
+            //     }
+            //     if ( state == 10 ) {
+            //         alert("You have added 30 lives!");
+            //     }
+            // }, true);
+
+            function animateMonkey(){
+                console.log('animateMonkey!');
+                sound.play();
+                $("body").css({
+                    "background-image": "url(img/giphy.gif)",
+                    "background-repeat": 'no-repeat',
+                    "background-size": "100%"
+                });
+
+                setTimeout(function(){ 
+                    sound.pause();
+                    $("body").css('background-image', '');
+                    //you only need to reference the css property you want to change, not all of them. then to have it go away you just have empty string " ".
+                }, 5000);
+                // the seconds are outside the curly brackets b/c its the second parameter of the setTimeout function.
+            }
+
+            var i = 0, konami = [38,38,40,40,37,39,37,39,66,65];
+            var sound = new Audio("Puppy-Monkey-Baby-Ringtone---Mountain-Dew.mp3");
+            var intervalId;
+            //b/c if this variable would only exist when the functon is running
+
+            $(document).keydown(function(event){
+                //the top line means - $= get & (document) = the whole document page
+                //when the user does a keydown then run this function.
+                if ( event.keyCode == konami[i] ){ 
+                //top line means = if the keys the user pressed are the Konami code sequence above
+                    i++;
+                    //& to check to ensure all of the sequence is done 
+                } else { 
+                    i = 0;
+                    // and i=0 b/c and if needs an else 
+                }
+                if ( i == konami.length ) {
+                    console.log('code entered!');
+                    //when the array is done then do the next line.
+                    //the next line says 
+                    //"$" means to take
+                    //("body") means the whole body of the document
+                    //.css is standard syntax
+                    //
+                    animateMonkey();
+                    intervalId = setInterval( animateMonkey, 10000);
+                    //this interval has to be inside the .keydown to be applicable to the loop. to end the loop.  BC its inside a function the var had to be global. bc when we create the variable and use it, its in 2 sep calls to the function.
+                }
+
+                if(event.keyCode == "27"){
+                    console.log('clearing interval...');
+                    console.log('intervalId: ' + intervalId);
+                    clearInterval(intervalId);
+                }
+            });
+    </script>
+</head>
+<body>
+    <p id="codeup" >Please type something into this form:</p>
+    <form>
+        <input type="text" id="textfield" name="textfield" placeholder="Type Here"/>
+    </form>
+
+</body>
+</html>
+
