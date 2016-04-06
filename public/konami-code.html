@@ -22,6 +22,7 @@
             function animateMonkey(){
                 console.log('animateMonkey!');
                 sound.play();
+                //(body) can be appended to start playing when the file loads. 
                 $("body").css({
                     "background-image": "url(img/giphy.gif)",
                     "background-repeat": 'no-repeat',
@@ -71,6 +72,7 @@
                     clearInterval(intervalId);
                 }
             });
+            //.hide(); s the same as display: none; in CSS
     </script>
 </head>
 <body>

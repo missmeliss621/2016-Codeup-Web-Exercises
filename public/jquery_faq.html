@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+        <style>
+        .invisible {
+            display: none;
+        }
+        .highlighted {
+            background-color: #FF0;
+        }
+        .hello {
+            font-size: 20px;
+        }
+    </style>
+    <script src="/js/jquery-1.12.2.min.js"></script>
+    <script>
+        "use strict";
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+
+                //  EXERCISE ONE
+
+        // $(document).ready(function() {
+        //     $('#highlight-important').click(function(event) {
+        //         //when the user clicks the href with the id of highlight-important fire off the function below.
+        //         event.preventDefault();
+        //         //dont allow the href to actually go anywhere. 
+        //         $('.description').toggleClass('invisible');
+        //         //this is the function that runs, when the user clicks the href.
+        //     });
+        // $('ul').each(function(index, element) {
+        //     //(comma),element means we can deal with each individual <ul>
+        //     $(element).children('li').first().css('font-weight', 'bold');
+        //     //element means each individual ul -- .children grabs all the children -- .first grabs all of the first -- goes to the first of the selection -- .css changes it.
+        // });
+        // $('li').click(function() {
+        //     //grab the li's and when clicked
+        //     $('li').parent().toggleClass('invisible');
+        //     //grab the li's parent and toggle the invisible.
+        // })
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+        $(document).ready(function() {
+            // $('#highlight-important').click(function(event) {
+            //     //when the user clicks the href with the id of highlight-important fire off the function below.
+            //     event.preventDefault();
+            //     //dont allow the href to actually go anywhere. 
+            //     $('.description').fadeOut(3000);
+            //     //this is the function that runs, when the user clicks the href.
+            // });
+            $('ul').each(function(index, element) {
+                //(comma),element means we can deal with each individual <ul>
+                $(element).children('li').first().css('font-weight', 'bold');
+                //element means each individual ul -- .children grabs all the children -- .first grabs all of the first -- goes to the first of the selection -- .css changes it.
+            });
+            $('li').click(function() {
+                //grab the li's and when clicked
+                $('li').parent().slideToggle();
+                //grab the li's parent and toggle the invisible.
+            })
+            // $('h3').click(function(){
+            //     $(this).next().fadeToggle(2000);
+            //     //the above means $(this) - take the users click and go to the .next - next item down (i.e. the <ul>) and fadeToggle that. This allows the user to click again and it comes back. 
+            // })
+            var hello = $('.hello');
+            $('h3').click(function(){
+                hello.animate({
+                    'margin-left': '1000px'
+                }, 3000) .animate({
+                    'margin-top': '2000px'
+                })
+            })
+        });
+
+    </script>
+</head>
+<body>
+
+    <h1>4 Things You May Not Know About 'Parks and Recreation'</h1>
+    <a href="#" id="highlight-important">Click to toggle the highlighting of important text.</a>
+    <p>
+        <dl>
+            <dt>1. THE SHOW WAS INITIALLY CONCEIVED AS A SPIN-OFF OF THE OFFICE.</dt>
+                <dd class="description">Scranton would break down in an episode of The Office and then end up in Pawnee, making the office equipment the spun-off character.</dd>
+            <dt>2. THE SHOW WAS ORIGINALLY TITLED PUBLIC SERVICE.</dt>
+                <dd class="description">Public Service was seriously considered as the name of the show, which got its start as The Untitled Amy Poehler Sitcom.</dd>
+            <dt>3. APRIL LUDGATE WAS WRITTEN JUST FOR AUBREY PLAZA.</dt>
+                <dd class="description">Casting director Allison Jones informed Schur, who became Parks’ showrunner, that she had just met “the weirdest girl," and that a meeting between Plaza and Schur had to happen. At the sit-down, Plaza made Schur "really uncomfortable for like an hour," and he decided to employ her. Aziz Ansari and Rashida Jones did not make Schur uneasy, but they were also cast before they or the writers knew who they would be playing.</dd>
+            <dt>4. RON SWANSON WAS LOOSELY BASED ON A REAL LIFE GOVERNMENT OFFICIAL.</dt>
+                <dd class="description">While Daniels and Schur were doing research, the two brought up the potential humor in Leslie Knope’s boss being anti-government to a libertarian official in Burbank, California. </dd>
+        </dl>
+    </p>
+    <h1>Parks List</h1>
+    <h3  class="hello">National Parks</h3>
+    <ul id="national-parks">
+        <li >Arches</li>
+        <li>Badlands</li>
+        <li>Carlsbad Caverns</li>
+        <li>Denali</li>
+        <li>Everglades</li>
+    </ul>
+    <h3>State Parks of Texas</h3>
+    <ul id="state-parks-texas">
+        <li>Abilene</li>
+        <li>Big Bend</li>
+        <li>Choke Canyon</li>
+        <li>Davis Mountains</li>
+        <li>Enchanted Rock</li>
+    </ul>
+
+</body>
+</html>

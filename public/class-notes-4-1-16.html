@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Example jQuery Page</title>
+    <script src="/js/jquery.js"></script>
+    <script>
+        "use strict";
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+        .each( function(index, Element) )
+        //element is each one on the page. For jquery the element comes last. In Javascript it comes first. 
+        //Similar to for.each
+
+EX: 
+        $('li').each(function(index) {
+            if (index % 2 !== 0) {
+            $(this).css('background-color', '#FF0');
+            }
+        });
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        
+
+        $('li').first().css('background-color', '#FF0');
+
+EX: 
+        var first = $codeup.first();
+        first.css({
+            'font-size': '24px';
+        })
+
+
+EX: 
+        var first = $codeup.first();
+        last.css({
+            'font-size': '24px';
+        })
+
+EX: 
+        var first = $codeup.first();
+        var firstParent = first.parent();
+        //parent goes to the first above tab - so the (body)
+ 
+
+ EX: 
+        var body = $('body');
+        var children = body.children();
+        //child goes to the first above tab
+
+
+
+
+EX:
+    var body = $('.item-1').parent('.level-2');
+    //this will start at the first defined spot = item-1 and then finds it's parent of level-2.
+    //level-1 & 2 are part of sample <UL><li> code.
+
+    //use children - its read better by others. 
+
+    var body = $('.item-1').parents('.level-2');
+    //if .parents is plural - it selects all of the parents above .item-1.
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        $(document).ready(function() {
+            $('#codeup').html();
+
+            var heading = $('codeup').html('hello issac');
+            //this changes the HTML in the DOM
+
+
+
+
+            var h1 = $('#codeup').html();
+                alert(h1);
+
+            $('#codeup').click(function() {
+                var h1 = $('#codeup').html();
+                alert(h1);
+            });
+
+
+
+            $('#codeup').click(function() {
+                var h1 = $(this).html();
+                alert(h1);
+            });
+
+
+
+
+            $('#codeup').click(function() {
+                alert($(this).html());
+            //The above is jquery wrapped
+            //.html gets and sets/assigned it
+            });
+            //'this' references what the user clicked. This function says retrieve this html in the DOM.
+            //the ($(this)) = is important. B/c .html belongs to jquery so you have to wrap the selector before it in parentheses. Or you get ".html is not a function."  IT MUST BE WRAPPED. 
+
+            $('#codeup').click(function() {
+                var $this = $(this);
+                // this is a short hand/OPTIMIZATION so all the below "this" doesnt have to be wrapped multiple times. This is code optimization. This must be inside the function bc its referencing the thing the user did to fire this function. 
+                // $(this).css('background-color', '#000000');
+                // $(this).css('background-image', '#000000');
+                // $(this).css('color', '#000000');
+                // $(this).css('background-color', '#000000');
+            });
+
+
+
+        });
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        <!DOCTYPE html>
+<html>
+<head>
+    <title>Example jQuery Page</title>
+    <style>
+        .centered {
+            text-align: center;
+        }
+        .highlighted {
+            background-color: #FF0;
+        }
+    </style>
+    <script src="/js/jquery.js"></script>
+    <script>
+        "use strict";
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////   
+
+        $(document).ready(function() {
+            $('#highlight-important').click(function(event) {
+                event.preventDefault();
+                //event.preventDefault(); == dont take me anywhere. leave me here - overrides the anchor tag
+                $('.important').addClass('highlighted');
+                //on click/user click/user event== run this css color highlight. The example code is highlighting just specific parts of the DOM.
+            });
+        });
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////       
+
+ .removeClass( className ) == removes the .cs you have on the page. It removes it on the DOM.
+
+ .hidden {
+    display:none;
+ }
+.show {
+    display: block;
+}
+//this allows elements to be hidden/shown on user events. EXAMPLE: $('.important').addClass('show');
+
+.toggleClass( className )
+//this allows different things to be highlighted with a user event. You can put a timer on it too.
+
+// dd == definition
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// ANIMATE
+$(selector).animate({
+    property1: "value1",
+    property2: "value2",
+    // ...
+}, time);
+
+$("#the-box").animate({
+    left: "30px",
+    top:  "50px"
+}, 500);
+
+$("#the-box").animate({
+    left: "+=30px",
+    top:  "+=50px"
+}, 500);
+
+$("#the-box").animate({
+    left: "+=30px",
+    top:  "+=50px"
+}, 500, function() {
+    alert("Animation complete!");
+});
+
+$(selector).animate({
+    property: "value"
+}, duration1).animate({
+    property: "value"
+}, duration2).animate({
+    property: "value"
+}, duration3);
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    </script>
+</head>
+<body>
+    <h1>Example Page</h1>
+    <div class="centered important">
+        <h3>NOTICE</h3>
+        <p>This is an important message!</p>
+    </div>
+    <div class="not-important">
+        <h2>Lorem Ipsum</h2>
+        <p>Lorem ipsum dolor sit amet, incididunt ut <span class="important">labore et dolore magna aliqua.</span>, quis ut aliquip ex ea commodo.</p>
+    </div>
+    <p class="centered important">This is also very important.</p>
+    <a href="#" id="highlight-important">Click to highlight important text.</a>
+</body>
+</html>
+    </script>
+</head>
+<body>
+    <h1 id="codeup">Hello Codeup</h1>
+</body>
+</html>
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Example jQuery Page</title>
+    <style>
+        .centered {
+            text-align: center;
+        }
+        .highlighted {
+            background-color: #FF0;
+        }
+    </style>
+    <script src="/js/jquery.js"></script>
+    <script>
+        "use strict";
+
+        $(document).ready(function() {
+            $('#highlight-important').click(function(event) {
+                event.preventDefault();
+                $('.important').toggleClass('highlighted');
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Example Page</h1>
+    <div class="centered important highlighted">
+        <h3>NOTICE</h3>
+        <p>This is an important message!</p>
+    </div>
+    <div class="not-important">
+        <h2>Lorem Ipsum</h2>
+        <p>Lorem ipsum dolor sit amet, incididunt ut <span class="important highlighted">labore et dolore magna aliqua.</span>, quis ut aliquip ex ea commodo.</p>
+    </div>
+    <p class="centered important highlighted">This is also very important.</p>
+    <a href="#" id="highlight-important">Click to toggle the highlighting of important text.</a>
+</body>
+</html> -->

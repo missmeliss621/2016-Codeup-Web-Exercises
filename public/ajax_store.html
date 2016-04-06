@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Store</title>
+</head>
+<body>
+
+<h1>My Tool Store</h1>
+
+<table id="products">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Categories</th>
+        </tr>
+
+    </thead>
+    <tbody id="insertProducts">
+    </tbody>
+
+    <button id="refresh">Refresh</button>
+</table>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+<script>
+(function() {
+
+
+    function getToolData () {
+        $('#insertProducts').html('');
+
+        $.get("/data/inventory.json").done(function(data) {
+            data.forEach(function(tool){
+            //take the data and run a foreach loop with the function of tool.    
+
+            // data[0] means grab the first element in the array
+            // use square brackets to access an element in an array. - first object
+                $("#insertProducts").append('<tr>');
+                $("#insertProducts").append("<td>" + tool.title + "</td>");
+                $("#insertProducts").append("<td>" + tool.quantity + "</td>");
+                $("#insertProducts").append("<td>" + tool.price + "</td>");
+                $("#insertProducts").append("<td>" + tool.categories + "</td>");
+                $("#insertProducts").append('</tr>');
+
+            })
+
+            // the dot says go to the property of an object. - title property - add tool
+            // a plus sign cancaps... the two.
+        })
+    }
+
+    //.done means when this step of .get is complete then do this function.
+
+    // TODO: Create an ajax GET request for /data/inventory.json
+
+    // TODO: Take the data from inventory.json and append it to the products table
+    //       HINT: Your data should come back as a JSON object; use console.log() to inspect
+    //             its contents and fields
+    //       HINT: You will want to target #insertProducts for your new HTML elements
+
+    getToolData();
+
+    $('#refresh').click(function(){
+        getToolData();
+
+    })
+
+})();
+</script>
+
+</body>
+</html>

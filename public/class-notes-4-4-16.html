@@ -1,0 +1,105 @@
+
+TIPS:
+---------------------------------------------------------------------------------
+
+Always use the document.ready. This allows the page to load before running the jquery. This will prevent unnecessary warnings in the console. 
+
+$(document).ready(function(){
+    
+})
+
+-- if you choose not to, then place the javascript below the body </body>
+
+---------------------------------------------------------------------------------
+
+jQuery Animate
+
+$(selector).animate({
+    property1: "value1",
+    property2: "value2",
+    // ...
+}, time);
+
+-- NOTE: Animate has 3 peramiters:
+1. property
+2. duration
+3. completion
+
+-- NOTE: Values
+1. show
+2. hide
+3. toggle
+
+-- DEFINITION: Chaining - multiple animations strung together in one call/string.
+
+-- NOTE: with animation try making your elements position: relative;
+
+EXAMPLE:
+
+(function(){
+    $(document).ready(function() {
+    $("#national-parks-toggle").click(function() {
+        $("#national-parks").animate({
+            height: "toggle",
+            opacity: "toggle"
+        }, 1000, function() {
+            alert("Animation complete!");
+        });
+    });
+    $("#state-parks-texas-toggle").click(function() {
+        $("#state-parks-texas").animate({
+            left: 100,
+            "font-size": "1.5em",
+            "border-width": "+=5px"
+        }, 500);
+    });
+});
+})
+
+
+----------------------------  AJAX  -------------------------------------------
+
+$.ajax("/some-url.json");
+
+$.ajax("/some-script.php", {
+    type: "POST",
+    data: {
+        name:     "John",
+        location: "Boston"
+    }
+});
+
+
+
+
+$.ajax({
+    url: "/users",
+    type: "GET",
+    data: {
+        limit:  10,
+        offset: 20
+    }
+});
+
+
+
+
+$.post("/address/save", {
+    first_name: "George",
+    last_name:  "Weathers",
+    city:       "Denver",
+    state:      "CO"
+});
+
+
+$.ajax("example.php").done(function() {
+    alert("Everything went great!");
+}).fail(function() {
+    alert("There was an error!");
+}).always(function() {
+    alert("And we're finished!");
+});
+<!-- .done means the request was completed successfully.
+.fail() - there was an error
+.always() - post the requested information regardless of success or fail.
+-->
