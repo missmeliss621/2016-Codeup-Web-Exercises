@@ -1,0 +1,44 @@
+body {
+    background-image: url("/img/ping-pong-background.png");
+    background-repeat: no-repeat;
+    width: 600px;
+    height: 600px;
+
+}
+#counter {
+    color: #930417;
+    font-size: 5em;
+    margin-left: 500px;
+    z-index: 40;
+    margin-top: 400px
+}
+
+#hitmiss {
+    z-index: 10px;
+    margin-left: 50px;
+    font-size: 7em;
+    width: 500px;
+    color: black;
+    margin-top: 85px;
+    font-family: arial;
+    text-transform: uppercase;
+}
+/* unvisited link */
+a:link {
+    color: #930417;
+}
+
+/* visited link */
+a:visited {
+    color: #930417;
+}
+
+/* mouse over link */
+a:hover {
+    color: #930417;
+}
+
+/* selected link */
+a:active {
+    color: #930417;
+}

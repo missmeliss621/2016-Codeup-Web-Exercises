@@ -1,0 +1,52 @@
+#masterContainer {
+    width: 1024px;
+    height: 1100px;
+    border: 1px solid grey;
+}
+#topNav {
+    width: 1024px;
+    height: 65px;
+    background-color: #71b4e3;
+    z-index: 10;
+}
+#theBigC{
+    background-image: url(../img/theBigC.png);
+    background-repeat: no-repeat;
+    width: 117px;
+    height: 121px;
+    z-index: 40;
+}
+#idks{
+    width: 900px;
+    color:white;
+    height: 60px;
+    z-index: 40;
+    margin-top: -119px;
+    margin-left: 250px;
+}
+#oneThing{
+    float:left;
+}
+#twoThing{
+    float:left;
+    padding-left: 50px;
+}
+#threeThing{
+    float:left;
+    padding-left: 50px;
+}
+#middleContainer {
+    width: 1024px;
+    height: 650px;
+}
+#rightIncludesContainer{
+    border: 1px solid grey;
+    width: 300px;
+    height: 500px;
+    float: right;
+}
+.rightTop{
+    border: solid 1px grey;
+    width: 200px;
+    height: 200px;
+}
