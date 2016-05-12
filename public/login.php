@@ -1,23 +1,23 @@
 <?php
 $message = '';
-
-
-
 session_start();
+require 'Auth.php';
 
+if (Auth::authCheck()){
+    header('location: authorized.php');
+    //make sure to exit on a redirect
+    exit();
+}
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];
-    $pass = $_POST['pass'];
-    if ($username === 'guest' && $pass === 'password') {
-        $_SESSION['logged_in_user'] = $username;
+    $password = $_POST['pass'];
+    if (Auth::attempt($username, $password)) {
         header('Location: authorized.php');
         die;
     } else {
-        $message = "Your username and password are complete";
+        $message = "Your username and password are not correct";
     }
 }
-
-
 ?>
 <!DOCTYPE html>
 <html>

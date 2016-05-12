@@ -16,6 +16,7 @@ class Input
         } else {
             return false;
         }
+        // I could have just done: {return isset::($REQUEST($key));}
     }
 
     /**
@@ -34,6 +35,7 @@ class Input
             return NULL;
         }
     }
+    // I could have just done: {return self::has($key);}
 
     ///////////////////////////////////////////////////////////////////////////
     //                      DO NOT EDIT ANYTHING BELOW!!                     //

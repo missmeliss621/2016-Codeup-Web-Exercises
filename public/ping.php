@@ -19,7 +19,8 @@ extract(pageController());
 </head>
 <body>
     <div id="counter">
-        <p><?= $count ?></p>    
+        <!--this is the echo statement -->   
+        <p><?= $count ?></p>
     </div>
     <div id="hitmiss">
         <a href="pong.php?count=<?= $count+1 ?>">hit</a> 
