@@ -1,12 +1,18 @@
 <?php
 
-define ('DB_HOST','mysql:host=127.0.0.1;');
-define ('DB_NAME','dbname=employees');
-define ('DB_USER' ,'codeup');
-define ('DB_PASS', 'Parker123');
-// constants dont get $.
-//semicolon only use between host and name to concatenate them.
-
+require 'db_credentials.php';
 require 'db_connect.php';
 
-echo $dbc->getAttribute(PDO::ATTR_CONNECTION_STATUS) . "\n";
+$listOfUsers = [
+    ['email' => 'jason@codeup.com',   'name' => 'Jason Straughan'],
+    ['email' => 'chris@codeup.com',   'name' => 'Chris Turner'],
+    ['email' => 'michael@codeup.com', 'name' => 'Michael Girdley']
+];
+
+foreach ($listOfUsers as $user) {
+    $query = 'INSERT INTO users (name, email) VALUES (" ' . $user['name'] . ' ", "' . $user['email'] . ' ")';
+    //$dbc ->exec($query);
+    //Returns the ID of the last inserted row,
+    //var_dump($dbc->lastInsertID());
+    var_dump($query);   
+}
