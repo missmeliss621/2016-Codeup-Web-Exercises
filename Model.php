@@ -20,23 +20,19 @@ class Model
     {
         // Check for existence of array key $name
         // if $name exists inside attribute then it returns true. $ makes it a variable so it can returns a true or false. If true it does the return.
-        if (array_key_exists($name, $this->attribute)) {
-            return $this->attribute[$name];
-        }
-
-        return null;
+        return isset($this->attributes[$name]) ? $this->attributes[$name] : null;
     }
     public static function getTableName()
     {
-        static::$table;
+        return static::$table;
     }
 }
 
-$ds = new Model();
-$ds->name = 'Arthur Dent';
-$ds->group = 'Codeup';
-$ds->age = 42;
+// $ds = new Model();
+// $ds->name = 'Arthur Dent';
+// $ds->group = 'Codeup';
+// $ds->age = 42;
 
-var_dump($ds);
+// var_dump($ds);
 
 //Im not done - I need to echo out the getter and setter - not var_dump!

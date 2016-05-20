@@ -35,6 +35,32 @@ class Input
             return NULL;
         }
     }
+
+    public static function getString($key)
+    {
+        $value=self::get($key);
+        if (!is_string($key)){
+            throw new Exception( '$value must be a string');
+        }
+        return $value;
+    }
+
+    public static function getNumber($key)
+    {
+        $value=self::get($key);
+        if (!is_numeric($value)){
+            throw new Exception('$value must be a number');
+        }
+        return $value;
+    }
+
+    public static function getDate($key)
+    {
+        $value=self::get($key);
+        if (!is_int($key)){
+            echo date('l, F jS Y @ h:i:s A');
+        }
+    }
     // I could have just done: {return self::has($key);}
 
     ///////////////////////////////////////////////////////////////////////////
